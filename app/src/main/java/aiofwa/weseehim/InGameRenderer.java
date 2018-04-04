@@ -1,5 +1,6 @@
 package aiofwa.weseehim;
 
+import android.graphics.Matrix;
 import android.opengl.GLES30;
 import android.provider.Settings;
 import android.util.Log;
@@ -10,6 +11,7 @@ import java.nio.FloatBuffer;
 
 /**
  * Created by 42yeah on 2018/4/4.
+ * WeSeeHim's InGameRenderer - which is used to render game scene.
  */
 
 public class InGameRenderer implements GameRenderer {
@@ -77,6 +79,8 @@ public class InGameRenderer implements GameRenderer {
         GLES30.glVertexAttribPointer(0, 2, GLES30.GL_FLOAT, false, FLOATSIZ * 2, triangle);
         GLES30.glEnableVertexAttribArray(0);
         GLES30.glUseProgram(prog);
+        // TODO: android.opengl.Matrix.orthoM();
+        GLES30.glUniformMatrix4fv(GLES30.glGetUniformLocation(prog, "p"), 1, false, );
         GLES30.glDrawArrays(GLES30.GL_TRIANGLES, 0, 3);
     }
 }
