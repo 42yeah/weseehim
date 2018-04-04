@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Weseehim</string>
+    <string name="welcome">Initializing GLSurfaceView...</string>
+</resources>
